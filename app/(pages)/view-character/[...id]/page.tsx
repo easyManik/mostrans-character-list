@@ -22,32 +22,70 @@ function ViewDetailCharacter({ params }: { params: { id: string } }) {
   };
 
   return (
-    <div className="bg-gray-100 w-full h-[100vh] p-5">
-      <a href={`/`} className="p-5 mb-5">
-        <i className="pi pi-arrow-left" style={{ fontSize: "2rem" }}></i>
-      </a>
-      <br />
+    <div className="bg-gray-100 w-full h-[100vh] p-3">
       <Card>
+        <a href={`/`}>
+          <Button
+            icon="pi pi-arrow-left"
+            rounded
+            text
+            raised
+            severity="secondary"
+          />
+        </a>
+        <br />
         <div className="grid gap-5 h-full">
-          <div className=" flex justify-center">
-            <Image src={data?.image} alt="" width="350" preview />
-          </div>
-          <div className="grid gap-3  lg:text-xl text-base">
-            <b className="text-2xl">Detail Information</b>
-            <div>
-              <p className="flex justify-between">Nama : {data?.name}</p>
-              <p>Gender : {data?.gender}</p>
-              <p>
-                Created At :{" "}
-                {moment(data?.created).format("DD MMMM YYYY HH:mm:ss")}
-              </p>
-              <p>Species : {data?.species}</p>
-              <p>Status : {data?.status}</p>
+          <div className="grid">
+            <div className="flex justify-center text-center">
+              <div className="md:h-[186px] md:w-[186px] h-[140px] w-[140px] md:ml-0 md:mr-0 ml-auto mr-auto md:mb-0 mb-4 rounded-full ring-4 ring-slate-100 relative">
+                <img
+                  src={data?.image}
+                  alt=""
+                  className="w-full h-full object-cover rounded-full bg-white"
+                />
+              </div>
+            </div>
+            <div className="grid gap-3 lg:text-base text-sm m-5">
+              <b className="lg:text-2xl text-lg flex justify-center">
+                Detail Information
+              </b>
+              <div className="lg:flex grid justify-between">
+                <hr />
+                <div>
+                  <p className="flex justify-center">Nama</p>
+                  <b className="flex justify-center">{data?.name}</b>
+                  <hr />
+                </div>
+                <div>
+                  <p className="flex justify-center">Gender</p>
+                  <b className="flex justify-center">{data?.gender}</b>
+                  <hr />
+                </div>
+                <div>
+                  <p className="flex justify-center">Created At</p>
+                  <b className="flex justify-center">
+                    {moment(data?.created).format("DD MMMM YYYY HH:mm:ss")}
+                  </b>
+                  <hr />
+                </div>
+                <div>
+                  <p className="flex justify-center">Species</p>
+                  <b className="flex justify-center">{data?.species}</b>
+                  <hr />
+                </div>
+                <div>
+                  <p className="flex justify-center">Status</p>
+                  <b className="flex justify-center">{data?.status}</b>
+                  <hr />
+                </div>
+                <br />
+              </div>
             </div>
           </div>
-          <div className="lg:flex grid justify-around gap-5 lg:text-xl text-base">
+          <hr />
+          <div className="lg:flex grid justify-around gap-5 lg:text-lg text-sm">
             <div className="grid gap-3">
-              <b className="text-2xl">Location Information</b>
+              <b className="lg:text-2xl text-lg">Location Information</b>
               <div className=" grid gap-3">
                 <p>Location name : {data?.location?.name}</p>
                 <a
@@ -63,7 +101,7 @@ function ViewDetailCharacter({ params }: { params: { id: string } }) {
             </div>
 
             <div className="grid gap-3">
-              <b className="text-2xl">Origin Information</b>
+              <b className="lg:text-2xl text-lg">Origin Information</b>
               <div className=" grid gap-3">
                 <p>Location name : {data?.origin?.name}</p>
                 <a

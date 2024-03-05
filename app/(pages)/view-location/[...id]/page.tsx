@@ -25,8 +25,8 @@ const DetailLocation = ({ params }: { params: { id: string } }) => {
   return (
     <div className="bg-gray-100 p-5 grid gap-5">
       <Card>
-        <div className="grid gap-5 lg:text-xl text-base">
-          <b className="text-2xl">Information Location</b>
+        <div className="grid gap-5 lg:text-lg text-sm">
+          <b className="lg:text-2xl text-lg">Information Location</b>
           <div>
             <p>Nama : {data?.name}</p>
             <p>Dimention : {data?.dimension}</p>
@@ -46,7 +46,7 @@ const DetailLocation = ({ params }: { params: { id: string } }) => {
           rowsPerPageOptions={[5, 10, 15, 25, 50]}
           paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
           currentPageReportTemplate="{first} to {last} of {totalRecords}"
-          className="custom-datatable"
+          className="custom-datatable lg:text-base text-sm"
         >
           <Column
             header="No"

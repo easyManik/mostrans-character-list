@@ -23,7 +23,9 @@ const CharacterList = () => {
               <Card>
                 <Link href={`/view-character/${a.id}`}>
                   <b className="flex justify-center">{a.name}</b>
-                  <img src={a.image} />
+                  <div className="flex justify-center">
+                    <img src={a.image} alt="image" />
+                  </div>
                 </Link>
               </Card>
               <br />
