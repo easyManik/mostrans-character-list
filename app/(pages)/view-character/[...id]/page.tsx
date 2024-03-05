@@ -49,7 +49,7 @@ function ViewDetailCharacter({ params }: { params: { id: string } }) {
               <b className="lg:text-2xl text-lg flex justify-center">
                 Detail Information
               </b>
-              <div className="lg:flex grid justify-between">
+              <div className="lg:flex grid lg:justify-between justify-center">
                 <hr />
                 <div>
                   <p className="flex justify-center">Nama</p>
