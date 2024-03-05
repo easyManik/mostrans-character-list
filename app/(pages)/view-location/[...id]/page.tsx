@@ -11,9 +11,6 @@ import { Column } from "primereact/column";
 const queryClient = new QueryClient();
 
 const DetailLocation = ({ params }: { params: { id: string } }) => {
-  const paginatorLeft = <Button type="button" icon="pi pi-refresh" text />;
-  const paginatorRight = <Button type="button" icon="pi pi-download" text />;
-
   const { data, refetch } = useQuery({
     queryKey: ["character-location"],
     queryFn: () => consumeAPILocation(params.id[0]),
@@ -49,8 +46,6 @@ const DetailLocation = ({ params }: { params: { id: string } }) => {
           rowsPerPageOptions={[5, 10, 15, 25, 50]}
           paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
           currentPageReportTemplate="{first} to {last} of {totalRecords}"
-          paginatorLeft={paginatorLeft}
-          paginatorRight={paginatorRight}
           className="custom-datatable"
         >
           <Column
