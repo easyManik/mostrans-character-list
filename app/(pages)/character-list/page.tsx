@@ -17,12 +17,14 @@ const CharacterList = () => {
         <b>Character List</b>
       </div>
       <div className="w-full p-5 bg-gray-100">
-        <div className={`lg:grid lg:grid-cols-6 lg:gap-5`}>
+        <div className={`md:grid md:grid-cols-5 grid-cols-3 gap-5`}>
           {data?.results.map((a: any, i: any) => (
             <div key={i}>
               <Card>
                 <Link href={`/view-character/${a.id}`}>
-                  <b className="flex justify-center">{a.name}</b>
+                  <b className="flex justify-center lg:text-lg text-sm">
+                    {a.name}
+                  </b>
                   <div className="flex justify-center">
                     <img src={a.image} alt="image" />
                   </div>
